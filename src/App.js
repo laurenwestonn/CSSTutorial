@@ -1,23 +1,21 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import './App.scss';
+import { SectionGradient } from './sections/SectionGradient'
+import { SectionGrids } from './sections/SectionGrids'
 
 function App() {
+  const [section, setSection] = useState("grids")
   return (
     <div className="App">
+    <div className={`section-button ${section === 'gradient' ? 'selected' : ''}`} onClick={() => setSection("gradient")}>Gradient</div>
+    <div className={`section-button ${section === 'grids' ? 'selected' : ''}`} onClick={() => setSection("grids")}>Grids</div>
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        {section === "gradient" && 
+          <SectionGradient />
+        }
+        {section === "grids" && 
+          <SectionGrids />
+        }
       </header>
     </div>
   );
