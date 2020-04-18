@@ -6,11 +6,23 @@ export const SectionGrids = () => {
             <h1>Grids</h1>
 
             <h3>Container</h3>
-            <ul>
-                <li>display: grid</li>
-                <li>Set column sizes with grid-template-columns</li>
-                <li>Set row sizes with grid-template-rows</li>
-            </ul>
+
+            <p>Set these in the container:</p>
+            <div className='gridq' style={{ 
+                display: 'grid', 
+                gridTemplateColumns: '1fr 1fr',
+                gridColumnGap: 15
+            }}>
+                {/* <div className={'header'}>Set these in the container</div> */}
+                <div className={'info'}>Use grids layout</div>
+                <div className={'info-code'}>>display: grid</div>
+                <div className={'info'}>Set column sizes</div>
+                <div className={'info-code'}>>grid-template-columns</div>
+                <div className={'info'}>Set row sizes</div>
+                <div className={'info-code'}>>grid-template-rows</div>
+            </div>
+
+            <h3>grid-template-columns</h3>
 
             <h5 style={{marginBottom: 0}}>grid-template-columns: '1fr 1fr'</h5>
             <p style={{fontSize: 16, margin: 0}}>2 columns, each taking up same amount of space</p>
@@ -37,10 +49,10 @@ export const SectionGrids = () => {
             <p style={{fontSize: 16, margin: 0}}>THIS REQUIRED grid-template-columns (1fr, 1fr)</p>
 
             <div className="container uneven-rows">
-                <div className="block">1fr</div>
-                <div className="block">1fr</div>
-                <div className="block">1fr</div>
-                <div className="block">1fr</div>
+                <div className="block">1 high</div>
+                <div className="block">1 high</div>
+                <div className="block">2 high</div>
+                <div className="block">2 high</div>
             </div>
         </div>
     )

@@ -9,7 +9,7 @@ function App() {
     <div className="App">
     <div className={`section-button ${section === 'gradient' ? 'selected' : ''}`} onClick={() => setSection("gradient")}>Gradient</div>
     <div className={`section-button ${section === 'grids' ? 'selected' : ''}`} onClick={() => setSection("grids")}>Grids</div>
-      <header className="App-header">
+      <header className="section">
         {section === "gradient" && 
           <SectionGradient />
         }
